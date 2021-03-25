@@ -1,2 +1,38 @@
-<app-server></app-server>
-<app-server></app-server>
+<div>
+    <label>Server Name</label>
+    <input 
+        type="text"
+        class="form-control"
+        [(ngModel)]="serverName">
+    <!-- <p>{{ serverName }}</p> -->
+    <button 
+        class="btn btn-primary" 
+        [disabled]="!allowNewServer"
+        (click)="onCreateServer()">Add Server</button>
+    <!-- <p>{{ serverCreationStatus }}</p> -->
+    <p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
+    <app-server *ngFor="let server of servers"></app-server>
+</div>
+<!-- <div>
+    <label>Username</label>
+    <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="username">
+    <p>{{ username }}</p>
+    <button
+        class="btn btn-primary"
+        [disabled]="checkIsUsernameEmpty()"
+        (click)="onResetUsername()">Reset Username</button>
+</div> -->
+<!-- <div>
+    <button
+    class="btn btn-primary"
+    (click)="displayParagraph()">
+    Display Details</button>
+    <p *ngIf="detailsDisplayed">Additional Details</p>
+    <div *ngFor="let i of timesPressed">
+        <p *ngIf="i < 5" >{{ i }}</p>
+        <p *ngIf="i >= 5" [ngStyle]="{'backgroundColor': 'blue', 'color':'white'}">{{ i }}</p>
+    </div>
+</div> -->
